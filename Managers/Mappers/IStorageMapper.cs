@@ -1,6 +1,6 @@
 ﻿namespace SchoolingSystem.Managers.Mappers
 {
-    public interface IStorageMapper
+    public partial interface IStorageMapper
     {
     }
 }
