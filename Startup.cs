@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SchoolingSystem.Managers.Mappers;
 
 namespace SchoolingSystem
 {
@@ -24,6 +25,7 @@ namespace SchoolingSystem
                 options.RootDirectory = "/Views/Pages";
             });
             services.AddServerSideBlazor();
+            services.AddScoped<IStorageMapper, StorageMapper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
