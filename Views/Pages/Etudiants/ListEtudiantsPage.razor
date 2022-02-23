@@ -7,6 +7,15 @@
         <h4 class="text-warning">Chargement en cours!</h4>
     </Then>
     <Else>
-        <EtudiantTableList Etudiants="etudiants" />
+        <ListModeSwitcher ViewMode="viewMode">
+            <TableMode>
+                <button @onclick="switchToCards">Cards</button>
+                <EtudiantTableList Etudiants="@etudiants" />
+            </TableMode>
+            <CardMode>
+                <button @onclick="switchToTable">Table</button>
+                <EtudiantsCardList Etudiants="@etudiants" />
+            </CardMode>
+        </ListModeSwitcher>
     </Else>
 </IF>
