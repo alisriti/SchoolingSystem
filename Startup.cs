@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SchoolingSystem.Managers.Mappers;
+using SchoolingSystem.Managers.Storages.Etudiants;
 
 namespace SchoolingSystem
 {
@@ -26,6 +27,7 @@ namespace SchoolingSystem
             });
             services.AddServerSideBlazor();
             services.AddScoped<IStorageMapper, StorageMapper>();
+            services.AddScoped<IEtudiantStore, EtudiantStore>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
