@@ -2,11 +2,11 @@
 
 <h3>Liste des Etudiants</h3>
 
-@if (etudiants is null)
-{
-    <h4 class="text-warning">Chargement en cours!</h4>
-}
-else
-{
-    <EtudiantTableList Etudiants="etudiants" />
-}
+<IF Condition=@(etudiants is null)>
+    <Then>
+        <h4 class="text-warning">Chargement en cours!</h4>
+    </Then>
+    <Else>
+        <EtudiantTableList Etudiants="etudiants" />
+    </Else>
+</IF>
