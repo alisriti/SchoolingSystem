@@ -1,0 +1,9 @@
+﻿@using Scolarite.Models.Etudiants
+<div class="d-flex flex-row flex-wrap">
+    @foreach (Etudiant etudiant in Etudiants)
+    {
+        <div class="m-2">
+            <EtudiantCard Etudiant="@etudiant"></EtudiantCard>
+        </div>
+    }
+</div>
