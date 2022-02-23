@@ -1,0 +1,29 @@
+﻿@using SchoolingSystem.Models.Etudiants
+@page "/Etudiants"
+
+<h3>Liste des Etudiants</h3>
+
+@if (etudiants is null)
+{
+    <h4 class="text-warning">Chargement en cours!</h4>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>N° Carte</th>
+            <th>Nom et Prénom</th>
+            <th>Date et Lieu de naissance</th>
+            <th>Email</th>
+        </tr>
+        @foreach (Etudiant etudiant in etudiants)
+        {
+            <tr>
+                <td>@etudiant.NumCarte</td>
+                <td>@etudiant.Nom @etudiant.Prenom</td>
+                <td>@etudiant.DDN.ToShortDateString() à @etudiant.LDN</td>
+                <td>@etudiant.Email</td>
+            </tr>
+        }
+    </table>
+}
