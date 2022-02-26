@@ -9,7 +9,9 @@
     {
         <tr>
             <td>@etudiant.NumCarte</td>
-            <td>@etudiant.Nom @etudiant.Prenom</td>
+            <td>
+                <a href="/etudiants/@etudiant.ID">@etudiant.Nom @etudiant.Prenom</a>
+            </td>
             <td>@etudiant.DDN.ToShortDateString() à @etudiant.LDN</td>
             <td>@etudiant.Email</td>
         </tr>
