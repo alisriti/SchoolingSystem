@@ -9,8 +9,8 @@ namespace SchoolingSystem.Managers.Storages.Etudiants
 {
     public class EtudiantStore : IEtudiantStore
     {
-        private IStorageMapper storageMapper;
-        private string connectionString;
+        private readonly IStorageMapper storageMapper;
+        private readonly string connectionString;
 
         public EtudiantStore(IConfiguration configuration, IStorageMapper storageMapper)
         {
@@ -31,6 +31,25 @@ namespace SchoolingSystem.Managers.Storages.Etudiants
             da.Fill(dt);
 
             return storageMapper.ToListEtudiant(dt);
+        }
+
+        public Etudiant SelectEtudiantById(string id)
+        {
+            DataTable dt = new DataTable();
+
+            using var connection = new SqlConnection(connectionString);
+
+            SqlCommand cmd =
+                new SqlCommand("select * from ETUDIANTS WHERE ID = @aId", connection);
+            cmd.Parameters.AddWithValue("@aId", id);
+            connection.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            return dt.Rows.Count == 0
+                ? null
+                : storageMapper.ToEtudiant(dt.Rows[0]);
         }
     }
 }
