@@ -72,3 +72,19 @@ INSERT [dbo].[ETUDIANTS]  VALUES (NEWID(), '0701/00000154', 'REGGAZ', 'DJALLEL',
 INSERT [dbo].[ETUDIANTS]  VALUES (NEWID(), '0701/00000108', 'AZRI', 'MAAMAAR', CAST('1972-01-01T00:00:00.000' AS DateTime), 'اولاد حركات', 'AZRI@gmail.com', '')
 INSERT [dbo].[ETUDIANTS]  VALUES (NEWID(), '0701/00000038', 'BOURENANE', 'SMAIL', CAST('1969-06-02T00:00:00.000' AS DateTime), 'الصحيرة', 'BOURENANE@gmail.com', '')
 ```
+## Create "Enseignant" Table
+```sql
+USE [SCOLARITE]
+GO
+
+CREATE TABLE [dbo].[ENSEIGNANTS](
+	[ID] [varchar](50) NOT NULL,
+	[NumCarte] [varchar](50) NOT NULL,
+	[Nom] [varchar](50) NOT NULL,
+	[Prenom] [varchar](50) NOT NULL,
+	[Grade] [varchar](3) NOT NULL,
+	[Email] [varchar](200) NOT NULL,
+	[Telephone] [varchar](50) NOT NULL,
+ 	CONSTRAINT [PK_ENSEIGNANTS] PRIMARY KEY CLUSTERED ([Id] ASC)) 
+GO
+```
