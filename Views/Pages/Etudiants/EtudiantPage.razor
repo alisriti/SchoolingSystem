@@ -1,0 +1,10 @@
+﻿@page "/etudiants/{ID}"
+
+<IF Condition=@hasError>
+    <Then>
+        <h4 class="text-danger">@errorMessage</h4>
+    </Then>
+    <Else>
+        <EtudiantViewCard Etudiant="etudiant" />
+    </Else>
+</IF>
