@@ -8,5 +8,11 @@ namespace SchoolingSystem.Services.Foundations.Etudiants
         List<Etudiant> GetEtudiants();
 
         Etudiant GetEtudiantById(string id);
+
+        Etudiant GetEtudiantByNumCarte(string numCarte);
+
+        void CreateEtudiant(Etudiant etudiantToInsert);
+
+        bool NumCarteExists(string numCarte);
     }
 }

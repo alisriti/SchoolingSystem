@@ -18,7 +18,7 @@ namespace SchoolingSystem.Managers.Mappers
                 DDN = (DateTime)row["DDN"],
                 LDN = (string)row["LDN"],
                 Email = (string)row["Email"],
-                Telephone = (string)row["Telephone"],
+                Telephone = row["Telephone"] == DBNull.Value ? "" : (string)row["Telephone"],
             };
 
         public List<Etudiant> ToListEtudiant(DataTable table) =>

@@ -1,0 +1,60 @@
+﻿@page "/etudiants/create"
+<table>
+    <tr>
+        <td>N° Carte</td>
+        <td>
+            <input type="text" @bind="@newEtudiant.NumCarte" />
+        </td>
+    </tr>
+    <tr>
+        <td>Nom</td>
+        <td>
+
+            <input type="text" @bind="@newEtudiant.Nom" />
+        </td>
+    </tr>
+    <tr>
+        <td>Prénom</td>
+        <td>
+            <input type="text" @bind="@newEtudiant.Prenom" />
+        </td>
+    </tr>
+    <tr>
+        <td>Né(e) le</td>
+        <td>
+            <input type="date" @bind="@newEtudiant.DDN" />
+        </td>
+    </tr>
+    <tr>
+        <td>à </td>
+        <td>
+            <input type="text" @bind="@newEtudiant.LDN" />
+        </td>
+    </tr>
+    <tr>
+        <td>E-Mail</td>
+        <td>
+            <input type="text" @bind="@newEtudiant.Email" />
+        </td>
+    </tr>
+    <tr>
+        <td>Telephone</td>
+        <td>
+            <input type="text" @bind="@newEtudiant.Telephone" />
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <button class="btn btn-success" @onclick="creerEtudiant">Enregistrer</button>
+        </td>
+    </tr>
+</table>
+
+<IF Condition="hasError">
+    <Then>
+        <div class="alert alert-danger">
+            @errorMessage
+        </div>
+    </Then>
+</IF>

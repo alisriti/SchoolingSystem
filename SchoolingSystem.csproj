@@ -8,4 +8,9 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AtelierGL.Validations\AtelierGL.Validations.csproj" />
+    <ProjectReference Include="..\SchoolingSystem.Consts.Ar\SchoolingSystem.Consts.Ar.csproj" />
+  </ItemGroup>
+
 </Project>
