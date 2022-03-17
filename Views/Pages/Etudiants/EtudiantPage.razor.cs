@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
-using SchoolingSystem.Models.Etudiants;
-using SchoolingSystem.Services.Foundations.Etudiants;
+using SchoolingSystem.Services.ApiServices;
 using System;
+using Etudiant = SchoolingSystem.Models.Etudiants.Etudiant;
 
 namespace SchoolingSystem.Views.Pages.Etudiants
 {

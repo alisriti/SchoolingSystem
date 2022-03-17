@@ -1,5 +1,6 @@
 ﻿using SchoolingSystem.Models.Etudiants;
 using System;
+using Etudiant = SchoolingSystem.Models.Etudiants.Etudiant;
 
 namespace SchoolingSystem.Services.Mappers.Etudiants
 {

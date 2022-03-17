@@ -1,9 +1,11 @@
 ﻿using SchoolingSystem.Managers.IDManagers;
 using SchoolingSystem.Models.Accounts;
 using SchoolingSystem.Models.Etudiants;
+using SchoolingSystem.Services.ApiServices;
 using SchoolingSystem.Services.Foundations.Accounts;
-using SchoolingSystem.Services.Foundations.Etudiants;
 using SchoolingSystem.Services.Mappers.Etudiants;
+using System;
+using System.Transactions;
 
 namespace SchoolingSystem.Services.Processors
 {
@@ -28,22 +30,54 @@ namespace SchoolingSystem.Services.Processors
 
         public void RegisterEtudiant(NewEtudiantModel etudiant)
         {
-            string newId = idGenerator.GenerateId();
-
-            Etudiant etudiantToCreate = etudiantMapper.ToEtudiant(etudiant);
-            etudiantToCreate.ID = newId;
-
-            Account newAccount = new Account()
+            using TransactionScope transaction = new TransactionScope();
+            try
             {
-                Id = newId,
-                Email = etudiant.Email,
-                Profile = Profile.Etudiant,
-                Password = "1122222222",
-                Status = AccountStatus.Active
-            };
+                string newId = idGenerator.GenerateId();
 
-            etudiantService.CreateEtudiant(etudiantToCreate);
-            accountService.CreateAccount(newAccount);
+                Etudiant etudiantToCreate = etudiantMapper.ToEtudiant(etudiant);
+                etudiantToCreate.ID = newId;
+
+                Account accountToCreate = new Account()
+                {
+                    Id = newId,
+                    Profile = Profile.Etudiant,
+                    Email = etudiant.Email,
+                    Password = "1122222222",
+                    Status = AccountStatus.Active
+                };
+
+                etudiantService.CreateEtudiant(etudiantToCreate);
+                accountService.CreateAccount(accountToCreate);
+
+                transaction.Complete();
+            }
+            catch (Exception exception)
+            {
+                throw new RegisterEtudiantException(exception);
+            }
+            finally
+            {
+                transaction.Dispose();
+            }
+        }
+    }
+
+    public class RegisterEtudiantException : Exception
+    {
+        //public RegisterEtudiantException(CreateEtudiantException exception) :
+        //    base("Echec de l'enregistrement de l'étudiant", exception)
+        //{
+        //}
+
+        public RegisterEtudiantException(CreateAccountException exception) :
+            base("Echec de l'enregistrement de l'étudiant", exception)
+        {
+        }
+
+        public RegisterEtudiantException(Exception exception) :
+            base("Echec de l'enregistrement de l'étudiant", exception)
+        {
         }
     }
 }

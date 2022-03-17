@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
-using SchoolingSystem.Models.Etudiants;
 using System.Collections.Generic;
+using Etudiant = SchoolingSystem.Models.Etudiants.Etudiant;
 
 namespace SchoolingSystem.Views.Components.Etudiants
 {

@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolingSystem", "SchoolingSystem.csproj", "{6E182295-E5EB-4B49-98B1-8304FF2B48D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolingSystem.consts", "..\SchoolingSystem.consts\SchoolingSystem.consts.csproj", "{1F2A8B0A-0E82-4731-90DB-255E1B2B9456}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolingSystem.consts", "..\SchoolingSystem.consts\SchoolingSystem.consts.csproj", "{1F2A8B0A-0E82-4731-90DB-255E1B2B9456}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolingSystem.Consts.Ar", "..\SchoolingSystem.Consts.Ar\SchoolingSystem.Consts.Ar.csproj", "{4675AAF3-EB2E-485D-81D0-E4406688ADCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolingSystem.Consts.Ar", "..\SchoolingSystem.Consts.Ar\SchoolingSystem.Consts.Ar.csproj", "{4675AAF3-EB2E-485D-81D0-E4406688ADCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtelierGL.Validations", "..\AtelierGL.Validations\AtelierGL.Validations.csproj", "{C242E1D0-A4C1-4CEE-9F76-17A6253640AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtelierGL.Validations", "..\AtelierGL.Validations\AtelierGL.Validations.csproj", "{C242E1D0-A4C1-4CEE-9F76-17A6253640AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtelierGL.Exceptions", "..\AtelierGL.Exceptions\AtelierGL.Exceptions.csproj", "{9D21F38F-75D5-4972-9E3D-673E1CCDB750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtelierGL.Exceptions", "..\AtelierGL.Exceptions\AtelierGL.Exceptions.csproj", "{9D21F38F-75D5-4972-9E3D-673E1CCDB750}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolingSyste.Etudiants.Api", "..\SchoolingSyste.Etudiants.Api\SchoolingSyste.Etudiants.Api.csproj", "{AC3F398C-D347-459E-AD3A-1F0F398F0596}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9D21F38F-75D5-4972-9E3D-673E1CCDB750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D21F38F-75D5-4972-9E3D-673E1CCDB750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D21F38F-75D5-4972-9E3D-673E1CCDB750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3F398C-D347-459E-AD3A-1F0F398F0596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3F398C-D347-459E-AD3A-1F0F398F0596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3F398C-D347-459E-AD3A-1F0F398F0596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3F398C-D347-459E-AD3A-1F0F398F0596}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

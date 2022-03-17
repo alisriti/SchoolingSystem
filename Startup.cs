@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SchoolingSystem.Managers.ApiManagers;
 using SchoolingSystem.Managers.IDManagers;
 using SchoolingSystem.Managers.Mappers;
 using SchoolingSystem.Managers.Storages.Accounts;
-using SchoolingSystem.Managers.Storages.Etudiants;
+using SchoolingSystem.Services.ApiServices;
 using SchoolingSystem.Services.Foundations.Accounts;
-using SchoolingSystem.Services.Foundations.Etudiants;
 using SchoolingSystem.Services.Mappers.Etudiants;
 using SchoolingSystem.Services.Processors;
 
@@ -32,9 +32,9 @@ namespace SchoolingSystem
                 options.RootDirectory = "/Views/Pages";
             });
             services.AddServerSideBlazor();
-            services.AddScoped<IStorageMapper, StorageMapper>();
-            services.AddScoped<IEtudiantStore, EtudiantStore>();
+            services.AddScoped<IApiManager, ApiManager>();
             services.AddScoped<IEtudiantService, EtudiantService>();
+            services.AddScoped<IStorageMapper, StorageMapper>();
             services.AddScoped<IEtudiantMapper, EtudiantMapper>();
             services.AddScoped<IIDGenerator, IDGenerator>();
             services.AddScoped<IAccountStore, AccountStore>();
