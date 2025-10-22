@@ -25,12 +25,12 @@ namespace SchoolingSystem.Managers.ApiManagers
             return JsonConvert.DeserializeObject<List<Etudiant>>(apiResponse);
         }
 
-        public Etudiant GetEtudiantById(string id)
+        public async ValueTask<Etudiant> GetEtudiantById(string id)
         {
-            var response = httpClient.GetAsync($"api/Etudiants/{id}").Result;
+            var response = await httpClient.GetAsync($"api/Etudiants/{id}");
             if (response.IsSuccessStatusCode)
             {
-                string apiResponse = response.Content.ReadAsStringAsync().Result;
+                string apiResponse = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<Etudiant>(apiResponse);
             }
             else return null;
